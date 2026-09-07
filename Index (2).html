@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lolly Gist & Drip (LGD) — The Pulse of Naija Youth, 5 Campuses & Street Drip</title>
+
+  <!-- Open Graph & Social Preview Meta Tags -->
+  <meta property="og:site_name" content="Lolly Gist & Drip Magazine" />
+  <meta property="og:title" content="Lolly Gist & Drip — The Real Naija Youth & Campus Beat" />
+  <meta property="og:description" content="Ground reporting from TASUED, FUNAAB, MAPOLY, OOU & UNILAG. Streetwear thrifting in Kuto & Yaba, student food reviews, remote tech hustles, and Naija realities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lollygistanddrip.ng" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lolly Gist & Drip — Real Campus Stories, Streetwear & Naija Currents" />
+  <meta name="twitter:description" content="Inside student life from Abeokuta to Lagos. Hot gist, thrift runs, food spots, and youth culture." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- SVG Favicon with Blue Gradient Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='lgdGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%231e3a8a'/><stop offset='60%25' stop-color='%232563eb'/><stop offset='100%25' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='26' fill='url(%23lgdGrad)'/><text x='50%25' y='58%25' dominant-baseline='central' text-anchor='middle' fill='%23ffffff' font-family='Arial, sans-serif' font-weight='900' font-size='38' letter-spacing='-2'>LGD</text></svg>" />
+
+  <!-- Google Web Fonts: Outfit for Display Headings & Plus Jakarta Sans for Reading Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN with darkMode enabled -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <script>
+    // Early theme initialization to avoid flash of incorrect mode
+    if (localStorage.getItem('lgd_theme') === 'dark' || (!('lgd_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a'
+            },
+            sky: {
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9'
+            },
+            accent: {
+              amber: '#f59e0b',
+              emerald: '#10b981',
+              rose: '#f43f5e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    @keyframes liveTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-live-ticker {
+      display: flex;
+      width: max-content;
+      animation: liveTicker 38s linear infinite;
+    }
+    .animate-live-ticker:hover {
+      animation-play-state: paused;
+    }
+
+    .article-prose p {
+      margin-bottom: 1.35rem;
+      line-height: 1.95;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+    .dark .article-prose p {
+      color: #cbd5e1;
+    }
+    .article-prose h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 1.55rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+    .dark .article-prose h2 {
+      color: #f8fafc;
+    }
+    .article-prose blockquote {
+      border-left: 4px solid #2563eb;
+      padding: 1rem 1.4rem;
+      font-style: italic;
+      color: #1e3a8a;
+      background: #eff6ff;
+      margin: 1.8rem 0;
+      border-radius: 0 1rem 1rem 0;
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+    .dark .article-prose blockquote {
+      background: #1e293b;
+      color: #93c5fd;
+      border-left-color: #38bdf8;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-brand-600 selection:text-white min-h-screen flex flex-col justify-between transition-colors duration-200">
+
+  <!-- Top Reading Progress Indicator -->
+  <div id="reading-progress-line" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-600 via-sky-400 to-accent-amber z-50 transition-all duration-150 w-0"></div>
+
+  <!-- Real-Time Breaking Campus & Naija Marquee Ticker -->
+  <aside class="bg-brand-950 text-white text-xs py-2 border-b border-brand-900 overflow-hidden select-none">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3">
+      <span class="bg-brand-600 text-white font-extrabold px-2.5 py-0.5 rounded-full text-[10px] tracking-wider uppercase shrink-0 flex items-center gap-1.5 shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> Live Radar
+      </span>
+      <div class="overflow-hidden relative w-full">
+        <div class="animate-live-ticker text-xs font-medium text-slate-300 gap-8">
+          <span>• 🎓 <strong>TASUED (Ijagun):</strong> CEPEP gate shuttle corridor dialogue holds as students establish fare monitoring team</span>
+          <span>• 👗 <strong>FUNAAB (Camp & Alabata):</strong> Motion ground vintage thrift fits and why Tuesday 6:30 AM Kuto Market run is undefeated</span>
+          <span>• 🍲 <strong>MAPOLY (Ojere):</strong> Inside the hilltop ₦800 Mama Shukura Amala rush fueling exam warriors for over a decade</span>
+          <span>• ⚡ <strong>OOU (Ago-Iwoye):</strong> Tech undergrads building ₦75,000 DIY solar rigs to safeguard remote dollar freelancing gigs</span>
+          <span>• 🚆 <strong>UNILAG (Akoka):</strong> Why Lagos students pack duffels for the 60-minute train escape to Abeokuta weekend chills</span>
+          <span>• 🇳🇬 <strong>National Currents:</strong> How students and young creators are hacking telco night bundles to save on monthly data</span>
+          <!-- Infinite ticker repeat -->
+          <span>• 🎓 <strong>TASUED (Ijagun):</strong> CEPEP gate shuttle corridor dialogue holds as students establish fare monitoring team</span>
+          <span>• 👗 <strong>FUNAAB (Camp & Alabata):</strong> Motion ground vintage thrift fits and why Tuesday 6:30 AM Kuto Market run is undefeated</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/90 dark:border-slate-800 shadow-sm transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Upper Navigation Row -->
+      <div class="h-20 flex items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800">
+        
+        <!-- Magazine Brand Logo -->
+        <a href="#" onclick="showHomePage(event)" class="flex items-center gap-3 group shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-900 via-brand-700 to-sky-400 flex items-center justify-center text-white shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform">
+            <span class="font-display font-black text-xl tracking-tight">L</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-black text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white leading-none">
+              LOLLY <span class="font-display italic font-extrabold text-brand-600 dark:text-sky-400">Gist & Drip</span>
+            </span>
+            <span class="text-[9px] tracking-[0.20em] text-slate-500 dark:text-slate-400 font-bold uppercase mt-1">
+              5 Campuses • Naija Currents • Street Drip • Chow • Tech
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Search Form -->
+        <form onsubmit="handleSearchSubmit(event, 'desktop-search-input')" class="hidden md:flex flex-1 max-w-md mx-6 relative items-center">
+          <input
+            id="desktop-search-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Search TASUED, FUNAAB, MAPOLY, OOU, UNILAG, thrift, amala..."
+            class="w-full pl-10 pr-24 py-2.5 text-xs rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-brand-600 dark:focus:border-sky-400 focus:ring-2 focus:ring-brand-100 dark:focus:ring-slate-700 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium"
+            oninput="handleLiveSearch(this.value)"
+            onfocus="handleLiveSearch(this.value)"
+          />
+          <i class="ph-magnifying-glass ph-bold text-slate-400 absolute left-3.5 top-3.5 text-sm"></i>
+          <button 
+            type="submit" 
+            class="absolute right-1.5 top-1.5 bottom-1.5 px-4 bg-brand-600 hover:bg-brand-700 dark:bg-sky-500 dark:hover:bg-sky-600 text-white font-bold text-[11px] rounded-full transition-all shadow-sm active:scale-95"
+          >
+            Search
+          </button>
+
+          <!-- Desktop Instant Search Live Results Dropdown -->
+          <div id="desktop-search-dropdown" class="hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-3 z-50 max-h-96 overflow-y-auto space-y-1.5">
+            <!-- Populated via JavaScript -->
+          </div>
+        </form>
+
+        <!-- Right Side Utility Controls -->
+        <div class="flex items-center gap-2 sm:gap-2.5">
+          <!-- Dark / Light Mode Toggle Button -->
+          <button 
+            onclick="toggleThemeMode()" 
+            id="theme-toggle-btn"
+            class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 text-slate-700 dark:text-amber-300 border border-slate-200 dark:border-slate-700 transition-colors shadow-sm" 
+            title="Toggle Dark/Light Mode"
+            aria-label="Toggle theme mode"
+          >
+            <i id="theme-toggle-icon" class="ph-moon ph-bold text-lg"></i>
+          </button>
+
+          <!-- Saved Bookmarks Drawer Trigger -->
+          <button onclick="toggleBookmarkDrawer()" class="relative p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-sky-400 border border-slate-200 dark:border-slate-700 transition-colors shadow-sm" title="Saved Bookmarks">
+            <i class="ph-bookmark-simple ph-bold text-lg"></i>
+            <span id="bookmark-count-badge" class="hidden absolute -top-1 -right-1 w-4 h-4 bg-brand-600 text-white text-[9px] font-black rounded-full items-center justify-center">0</span>
+          </button>
+
+          <!-- Share Magazine Trigger -->
+          <button onclick="shareEntirePublication()" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-sky-400 border border-slate-200 dark:border-slate-700 transition-colors shadow-sm" title="Share Blog Link">
+            <i class="ph-share-network ph-bold text-lg"></i>
+          </button>
+          
+          <!-- Daily Digest Scroll Button -->
+          <button onclick="scrollToNewsletterSection()" class="bg-brand-900 dark:bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-3 sm:px-5 py-2.5 rounded-full transition-all flex items-center gap-1.5 shadow-md shadow-brand-900/10 active:scale-95">
+            <i class="ph-paper-plane-tilt ph-bold"></i>
+            <span class="hidden sm:inline">Daily Digest</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="py-2.5 flex items-center justify-between gap-3 overflow-x-auto no-scrollbar text-xs font-bold">
+        <div class="flex items-center gap-2 whitespace-nowrap" id="topic-navigation-strip">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Search Bar -->
+    <div class="md:hidden px-4 pb-3 border-t border-slate-100 dark:border-slate-800 pt-2 bg-white dark:bg-slate-900 relative">
+      <form onsubmit="handleSearchSubmit(event, 'mobile-search-input')" class="relative flex items-center">
+        <input
+          id="mobile-search-input"
+          type="text"
+          autocomplete="off"
+          placeholder="Search TASUED, FUNAAB, MAPOLY, tech, drip..."
+          class="w-full pl-9 pr-20 py-2 text-xs rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-brand-600 font-medium placeholder:text-slate-400 dark:placeholder:text-slate-500"
+          oninput="handleLiveSearch(this.value)"
+          onfocus="handleLiveSearch(this.value)"
+        />
+        <i class="ph-magnifying-glass ph-bold text-slate-400 absolute left-3 top-2.5"></i>
+        <button 
+          type="submit" 
+          class="absolute right-1 top-1 bottom-1 px-3 bg-brand-600 dark:bg-sky-500 text-white font-bold text-[10px] rounded-full"
+        >
+          Search
+        </button>
+      </form>
+
+      <!-- Mobile Instant Search Live Results Dropdown -->
+      <div id="mobile-search-dropdown" class="hidden absolute top-full left-4 right-4 mt-1 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-3 z-50 max-h-80 overflow-y-auto space-y-1.5">
+        <!-- Populated via JavaScript -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Feedback Toast -->
+  <div id="interactive-toast" class="fixed bottom-6 right-6 z-50 hidden bg-brand-950 dark:bg-slate-800 text-white px-5 py-3 rounded-2xl shadow-2xl items-center gap-3 border border-sky-400/40 text-xs font-semibold animate-bounce">
+    <i class="ph-sparkle ph-fill text-sky-400 text-base"></i>
+    <span id="toast-text">Action completed successfully</span>
+  </div>
+
+  <!-- Bookmarks Drawer Modal -->
+  <div id="bookmark-drawer-modal" class="fixed inset-0 z-50 bg-brand-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+        <div class="flex items-center gap-2">
+          <i class="ph-bookmark-simple ph-bold text-brand-600 dark:text-sky-400 text-xl"></i>
+          <h3 class="font-display font-black text-lg text-slate-900 dark:text-white">Saved Stories</h3>
+        </div>
+        <button onclick="toggleBookmarkDrawer()" class="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400">
+          <i class="ph-x ph-bold text-base"></i>
+        </button>
+      </div>
+      <div id="bookmark-drawer-content" class="flex-1 overflow-y-auto space-y-3">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <div id="home-view" class="flex-1">
+    
+    <!-- Active Search Results Banner (Shown dynamically when searching) -->
+    <section id="search-results-banner" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <div class="bg-brand-50 dark:bg-slate-900 border border-brand-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+        <div>
+          <span class="text-[10px] font-black uppercase tracking-wider text-brand-600 dark:text-sky-400 flex items-center gap-1.5">
+            <i class="ph-magnifying-glass ph-bold"></i> Active Keyword Search
+          </span>
+          <h3 class="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+            Search Results for: "<span id="active-search-keyword" class="text-brand-600 dark:text-sky-400">TASUED</span>"
+          </h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" id="active-search-count-desc">Showing matched campus stories and articles</p>
+        </div>
+        <button 
+          onclick="clearSearchQuery()"
+          class="bg-white dark:bg-slate-800 hover:bg-brand-100 dark:hover:bg-slate-700 text-brand-700 dark:text-sky-300 border border-brand-200 dark:border-slate-700 px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs"
+        >
+          <i class="ph-x-circle ph-bold text-base"></i> Clear Search
+        </button>
+      </div>
+    </section>
+
+    <!-- Lead Editorial Cover Banner (Hidden when actively searching) -->
+    <section id="lead-story-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+      <div id="lead-story-banner">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Dedicated Category Portals Shortcuts Section (Hidden when searching) -->
+    <section id="category-shortcuts-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+        <div class="flex items-center justify-between mb-3.5">
+          <span class="text-xs font-black uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-1.5">
+            <i class="ph-squares-four ph-bold text-brand-600 dark:text-sky-400"></i> Dedicated Category Portals
+          </span>
+          <span class="text-[11px] text-brand-600 dark:text-sky-400 font-bold hidden sm:inline">Click any portal to open full section →</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="portal-shortcuts-grid">
+          <!-- Populated via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Articles Stream + Campus Radar Sidebar -->
+    <section id="articles-feed-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left 8 Columns: Main Editorial Stream -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3.5">
+            <div>
+              <span class="text-[11px] font-black uppercase tracking-widest text-brand-600 dark:text-sky-400" id="feed-subhead-badge">Latest Intelligence</span>
+              <h2 class="font-display text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" id="feed-main-heading">Featured Long Reads & Ground Reports</h2>
+            </div>
+            <div class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-full shadow-sm" id="post-counter-badge">
+              12 Dispatches
+            </div>
+          </div>
+
+          <!-- Dynamic Articles Stream -->
+          <div id="main-articles-feed" class="space-y-6">
+            <!-- Injected via JavaScript -->
+          </div>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-8">
+          
+          <!-- 5 Campuses Quick Intelligence Card -->
+          <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-4">
+              <span class="text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
+                <i class="ph-graduation-cap ph-bold text-brand-600 dark:text-sky-400 text-lg"></i> 5 Campuses Radar
+              </span>
+              <span class="text-[10px] bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-sky-300 px-2 py-0.5 rounded-full font-bold">Ogun & Lagos</span>
+            </div>
+            <ul class="space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+              <li class="flex gap-2.5 items-start cursor-pointer group" onclick="triggerCampusFilter('TASUED')">
+                <span class="w-5 h-5 rounded-full bg-brand-100 dark:bg-slate-800 text-brand-800 dark:text-sky-400 font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-600 group-hover:text-white transition-colors">01</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors">TASUED (Ijagun):</strong> CEPEP corridor shuttle fare stabilization and GS examination prep strategies.
+                </div>
+              </li>
+              <li class="flex gap-2.5 items-start cursor-pointer group" onclick="triggerCampusFilter('FUNAAB')">
+                <span class="w-5 h-5 rounded-full bg-brand-100 dark:bg-slate-800 text-brand-800 dark:text-sky-400 font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-600 group-hover:text-white transition-colors">02</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors">FUNAAB (Camp & Alabata):</strong> Motion ground vintage runway looks and off-campus solar setups.
+                </div>
+              </li>
+              <li class="flex gap-2.5 items-start cursor-pointer group" onclick="triggerCampusFilter('MAPOLY')">
+                <span class="w-5 h-5 rounded-full bg-brand-100 dark:bg-slate-800 text-brand-800 dark:text-sky-400 font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-600 group-hover:text-white transition-colors">03</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors">MAPOLY (Ojere):</strong> Hilltop ₦800 Mama Shukura Amala rush and media agency hubs.
+                </div>
+              </li>
+              <li class="flex gap-2.5 items-start cursor-pointer group" onclick="triggerCampusFilter('OOU')">
+                <span class="w-5 h-5 rounded-full bg-brand-100 dark:bg-slate-800 text-brand-800 dark:text-sky-400 font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-600 group-hover:text-white transition-colors">04</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors">OOU (Ago-Iwoye):</strong> Tech students building mini solar rigs to safeguard remote dollar gigs.
+                </div>
+              </li>
+              <li class="flex gap-2.5 items-start cursor-pointer group" onclick="triggerCampusFilter('UNILAG')">
+                <span class="w-5 h-5 rounded-full bg-brand-100 dark:bg-slate-800 text-brand-800 dark:text-sky-400 font-black text-[10px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-600 group-hover:text-white transition-colors">05</span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors">UNILAG (Akoka):</strong> Friday fast train escape from Lagos to Abeokuta for peaceful weekend resets.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Most Read Trending Pulse Widget -->
+          <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+            <h3 class="font-display text-lg font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-3 mb-4 flex items-center gap-2">
+              <i class="ph-flame ph-fill text-accent-rose text-xl"></i> Most Read This Week
+            </h3>
+            <div class="space-y-4" id="trending-stories-stream">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+
+          <!-- Interactive Youth Reality Poll -->
+          <div class="bg-brand-950 dark:bg-slate-900 text-white rounded-3xl p-6 shadow-xl border border-brand-900 dark:border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-black uppercase tracking-wider text-sky-400">Weekly National Youth Poll</span>
+              <i class="ph-chart-bar-horizontal ph-bold text-slate-400 text-base"></i>
+            </div>
+            <h4 class="font-display text-base font-bold text-slate-100 leading-snug">
+              Where is your monthly allowance or income taking the heaviest hit right now?
+            </h4>
+            <div class="space-y-2 pt-1 text-xs" id="interactive-poll-box">
+              <button onclick="submitPollVote(0)" class="w-full p-3 rounded-2xl bg-brand-900 dark:bg-slate-800 hover:bg-brand-800 dark:hover:bg-slate-700 border border-slate-800 dark:border-slate-700 flex justify-between items-center transition-all group">
+                <span class="group-hover:text-brand-200">Food & Daily Groceries</span>
+                <span class="font-mono text-sky-400 font-bold" id="poll-percentage-0">52%</span>
+              </button>
+              <button onclick="submitPollVote(1)" class="w-full p-3 rounded-2xl bg-brand-900 dark:bg-slate-800 hover:bg-brand-800 dark:hover:bg-slate-700 border border-slate-800 dark:border-slate-700 flex justify-between items-center transition-all group">
+                <span class="group-hover:text-brand-200">Transport (Buses, Cabs & Shuttles)</span>
+                <span class="font-mono text-sky-400 font-bold" id="poll-percentage-1">33%</span>
+              </button>
+              <button onclick="submitPollVote(2)" class="w-full p-3 rounded-2xl bg-brand-900 dark:bg-slate-800 hover:bg-brand-800 dark:hover:bg-slate-700 border border-slate-800 dark:border-slate-700 flex justify-between items-center transition-all group">
+                <span class="group-hover:text-brand-200">Phone Data & Wi-Fi Subs</span>
+                <span class="font-mono text-sky-400 font-bold" id="poll-percentage-2">15%</span>
+              </button>
+            </div>
+            <span class="text-[10px] text-slate-400 block text-right">Verified readers voted: 4,120</span>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <section id="category-portal-view" class="hidden flex-1 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Navigation Breadcrumb -->
+      <nav class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+        <button onclick="showHomePage(event)" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-sky-400 transition-colors">
+          <i class="ph-arrow-left ph-bold text-base"></i> Back to Main Homepage
+        </button>
+        <div class="text-xs text-slate-400">
+          Viewing dedicated portal for: <strong class="text-slate-900 dark:text-white font-bold" id="portal-breadcrumb-category">Campus Gist</strong>
+        </div>
+      </nav>
+
+      <!-- Category Hero Banner with Custom Color Gradients -->
+      <div id="category-portal-hero-container" class="mb-10">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div id="category-subfilter-strip" class="mb-6 flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Articles Grid for this specific category -->
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3.5">
+          <h3 class="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white" id="portal-feed-title">
+            All Dispatches in this Section
+          </h3>
+          <span class="text-xs font-bold text-brand-700 dark:text-sky-300 bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700 px-3 py-1 rounded-full" id="portal-article-count-badge">
+            0 Stories
+          </span>
+        </div>
+
+        <div id="category-portal-articles-stream" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <article id="article-reader-view" class="hidden flex-1 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Back Navigation Row -->
+      <nav class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+        <button onclick="navigateBackFromReader()" class="inline-flex items-center gap-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-sky-400 transition-colors">
+          <i class="ph-arrow-left ph-bold text-base"></i> <span id="article-back-button-label">Back to Stories</span>
+        </button>
+        <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <span id="article-top-category-badge" class="font-bold text-slate-900 dark:text-white bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-lg"></span>
+          <span id="article-top-readtime-badge"></span>
+        </div>
+      </nav>
+
+      <!-- Active Article Content Injector -->
+      <div id="article-main-body-content">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <!-- Article-Specific FAQ Accordion Section -->
+      <section class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div class="mb-6">
+          <span class="text-[10px] font-black uppercase tracking-wider text-brand-600 dark:text-sky-400">Verified Facts & Answers</span>
+          <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mt-1">Frequently Asked Questions on this Story</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Key facts, campus details, and context verified by our editorial desk.</p>
+        </div>
+        <div id="article-faqs-container" class="space-y-3">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Reader Comments & Community Reactions -->
+      <section class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Reader Reactions & Voices</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Drop your take from your lodge, school, or city.</p>
+          </div>
+          <span class="text-xs font-bold text-brand-700 dark:text-sky-300 bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700 px-3 py-1 rounded-full" id="article-comments-count-pill">
+            3 Verified Comments
+          </span>
+        </div>
+
+        <!-- Comments Stream -->
+        <div id="article-comments-stream" class="space-y-3 mb-6">
+          <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- Submit Reaction Form -->
+        <form onsubmit="handleReaderCommentSubmission(event)" class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+          <span class="text-xs font-bold text-slate-900 dark:text-white block">Add your own voice:</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input type="text" id="comment-author-name" required placeholder="Your Name or Nickname (e.g. Dapo from TASUED)" class="w-full text-xs px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-brand-600 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-medium" />
+            <input type="text" id="comment-campus-city" placeholder="Campus or City (e.g. TASUED / FUNAAB Camp / UNILAG / Abeokuta)" class="w-full text-xs px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-brand-600 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-medium" />
+          </div>
+          <textarea id="comment-message-body" required rows="3" placeholder="What is your take on this? Drop the real gist..." class="w-full text-xs p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-brand-600 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-medium"></textarea>
+          <div class="flex justify-end">
+            <button type="submit" class="bg-brand-600 dark:bg-sky-500 hover:bg-brand-700 dark:hover:bg-sky-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-all shadow-md shadow-brand-600/20 active:scale-95">
+              Post Reaction
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Related Stories Discovery Grid -->
+      <section class="mt-14 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <span class="text-[10px] font-black uppercase tracking-wider text-brand-600 dark:text-sky-400">Keep Reading</span>
+            <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Stories You Might Also Like</h3>
+          </div>
+          <button onclick="showHomePage(event)" class="text-xs font-bold text-brand-600 dark:text-sky-400 hover:underline">
+            View All Dispatches →
+          </button>
+        </div>
+        <div id="article-related-posts-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+  <section id="newsletter-hub-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+    <div class="bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800 text-white rounded-3xl p-8 sm:p-12 border border-brand-700/40 relative overflow-hidden shadow-2xl">
+      <div class="absolute right-0 top-0 bottom-0 w-1/3 bg-sky-400/10 blur-3xl pointer-events-none"></div>
+      <div class="max-w-2xl relative z-10 space-y-4">
+        <span class="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest flex items-center gap-1.5">
+          <i class="ph-envelope-simple-open ph-bold"></i> The Friday VIP Digest
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-black tracking-tight text-white">
+          Never Miss What Is Happening in Nigeria, Campus Tea & Street Drip.
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+          Join over 34,000 Nigerian students, young tech professionals, and urban creators receiving our weekly breakdown of current affairs, thrift market schedules, honest chow reviews, and verified campus dispatches.
+        </p>
+        <form onsubmit="handleNewsletterSubscription(event)" class="flex flex-col sm:flex-row gap-2.5 pt-2 max-w-md">
+          <input
+            type="email"
+            id="newsletter-email-field"
+            required
+            placeholder="Enter your email address"
+            class="px-4 py-3 text-xs rounded-xl bg-white/10 text-white border border-white/20 focus:outline-none focus:border-sky-400 placeholder:text-slate-400 flex-1 backdrop-blur"
+          />
+          <button type="submit" class="bg-sky-400 hover:bg-sky-300 text-brand-950 font-extrabold text-xs px-6 py-3 rounded-xl transition-all shadow-lg active:scale-95">
+            Subscribe Free
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-brand-950 dark:bg-black text-slate-400 text-xs pt-14 pb-10 border-t border-brand-900 dark:border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+      
+      <div class="space-y-3 md:col-span-1">
+        <div class="flex items-center gap-2.5 text-white">
+          <div class="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center font-display font-black text-sm text-white">L</div>
+          <span class="font-display font-black text-base tracking-wider">LOLLY GIST & DRIP</span>
+        </div>
+        <p class="leading-relaxed text-[11px] text-slate-400">
+          The independent Nigerian publication documenting youth culture, national currents, university life, street chow, tech hustles, and high-fashion thrift across Lagos, Ogun, and beyond.
+        </p>
+        <div class="text-[10px] text-slate-500 font-mono">
+          Edited in Lagos & Abeokuta • Est. 2026
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3 text-[11px] flex items-center gap-1">
+          <i class="ph-graduation-cap ph-bold text-brand-400"></i> 5 Campuses Covered
+        </h4>
+        <ul class="space-y-2 text-[11px]">
+          <li><button onclick="triggerCampusFilter('TASUED')" class="hover:text-white transition-colors text-left">TASUED (Tai Solarin Univ. of Education)</button></li>
+          <li><button onclick="triggerCampusFilter('FUNAAB')" class="hover:text-white transition-colors text-left">FUNAAB (Fed. Univ. of Agriculture, Abeokuta)</button></li>
+          <li><button onclick="triggerCampusFilter('MAPOLY')" class="hover:text-white transition-colors text-left">MAPOLY (Moshood Abiola Polytechnic)</button></li>
+          <li><button onclick="triggerCampusFilter('OOU')" class="hover:text-white transition-colors text-left">OOU (Olabisi Onabanjo University)</button></li>
+          <li><button onclick="triggerCampusFilter('UNILAG')" class="hover:text-white transition-colors text-left">UNILAG (University of Lagos, Akoka)</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold uppercase tracking-wider mb-3 text-[11px] flex items-center gap-1">
+          <i class="ph-folders ph-bold text-sky-400"></i> Sections & Portals
+        </h4>
+        <ul class="space-y-2 text-[11px]">
+          <li><button onclick="openCategoryPortal('Naija Pulse')" class="hover:text-white">Naija Pulse (Current Affairs)</button></li>
+          <li><button onclick="openCategoryPortal('Fashion & Drip')" class="hover:text-white">Fashion & Drip (Thrift & Streetwear)</button></li>
+          <li><button onclick="openCategoryPortal('Food & Chow')" class="hover:text-white">Food & Chow (Canteen Reviews)</button></li>
+          <li><button onclick="openCategoryPortal('Tech & Hustle')" class="hover:text-white">Tech & Hustle (Dollar Freelancing)</button></li>
+          <li><button onclick="openCategoryPortal('Music & Buzz')" class="hover:text-white">Music & Buzz (Afrobeats & Gossip)</button></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-white font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+          <i class="ph-whatsapp-logo ph-bold text-emerald-400"></i> Direct WhatsApp Desk
+        </h4>
+        <p class="text-[11px] leading-relaxed">
+          Got verified breaking news, fresh campus tea, an outfit drop, or a food spot we must review? Send it directly to our editors.
+        </p>
+        <button onclick="openWhatsAppDeskChat()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-xs shadow-md">
+          <i class="ph-whatsapp-logo ph-bold text-base"></i>
+          <span>Send Story to Editors</span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 text-[11px] flex flex-col sm:flex-row justify-between items-center gap-3">
+      <span>© 2026 Lolly Gist & Drip Magazine. All rights reserved.</span>
+      <div class="flex gap-4 text-slate-500">
+        <a href="#" onclick="showInteractiveToast('Verified Student Editorial Ethics Protocol Active');" class="hover:text-slate-300">Privacy Policy</a>
+        <a href="#" onclick="showInteractiveToast('Submissions Desk: gist@lollygistanddrip.ng');" class="hover:text-slate-300">Contributors</a>
+        <a href="#" onclick="showInteractiveToast('Independent Youth Journalism Guidelines');" class="hover:text-slate-300">Editorial Standards</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Master Category Portals Configuration
+    const CATEGORIES_PORTALS_CONFIG = {
+      'Campus Gist': {
+        name: 'Campus Gist',
+        icon: 'ph-graduation-cap',
+        badge: '5 Campuses Covered',
+        heroTag: 'Undergraduate Realities & Campus Politics',
+        heroTitle: 'TASUED, FUNAAB, MAPOLY, OOU & UNILAG Dispatches',
+        heroDesc: 'From CEPEP shuttle standoffs in TASUED and Motion Ground fashion statements in FUNAAB, to Ojere canteen rushes in MAPOLY, Ago-Iwoye solar rigs in OOU, and Akoka cab surges in UNILAG—this is the real, unvarnished heartbeat of Nigerian campus life.',
+        stats: '5 Premier Institutions • Weekly Ground Reports',
+        bannerColor: 'from-brand-950 via-brand-800 to-sky-500',
+        subfilters: ['All', 'TASUED', 'FUNAAB', 'MAPOLY', 'OOU', 'UNILAG']
+      },
+      'Naija Pulse': {
+        name: 'Naija Pulse',
+        icon: 'ph-newspaper-clipping',
+        badge: 'National Currents',
+        heroTag: 'Economy, Trends & Youth Reality in 2026',
+        heroTitle: 'What Is Happening in Nigeria Right Now',
+        heroDesc: 'How young Nigerians are navigating fuel pump realities, telco data bundle adjustments, peer-to-peer cooperative food buying, and weekend train escapes from Lagos to Abeokuta.',
+        stats: 'National Field Reports • Youth Survival Blueprints',
+        bannerColor: 'from-slate-950 via-brand-900 to-brand-700',
+        subfilters: ['All', 'National Economy', 'Transit & Rail', 'Youth Hacks']
+      },
+      'Fashion & Drip': {
+        name: 'Fashion & Drip',
+        icon: 'ph-t-shirt',
+        badge: 'Streetwear & Thrift',
+        heroTag: 'Vintage Okrika & High-Street Aesthetics',
+        heroTitle: 'Thrift Codes, Baggy Fits & Tailor Magic',
+        heroDesc: 'Inside the secret 6:00 AM thrift rushes at Kuto (Abeokuta) and Yaba (Lagos), where fashion lovers score first-grade vintage denim and reworked Adire silk for under ₦6,000.',
+        stats: 'Weekly Market Schedules • Lookbook Reviews',
+        bannerColor: 'from-brand-950 via-brand-800 to-slate-900',
+        subfilters: ['All', 'Thrift Hunting', 'Adire Silk', 'Campus Lookbooks']
+      },
+      'Food & Chow': {
+        name: 'Food & Chow',
+        icon: 'ph-bowl-food',
+        badge: 'Chow Reviews',
+        heroTag: 'Street Eats & Legendary Canteens',
+        heroTitle: 'Where ₦1,500 Buys Pure Culinary Paradise',
+        heroDesc: 'From the smoking firewood pots of MAPOLY Ojere Amala to midnight Surulere suya grills and Camp shawarma corners—honest reviews of the food joints that never disappoint.',
+        stats: 'Tested Across Lagos & Ogun State • Real Prices',
+        bannerColor: 'from-amber-950 via-brand-900 to-brand-800',
+        subfilters: ['All', 'Amala Institutions', 'Suya Grills', 'Late Night Bites']
+      },
+      'Tech & Hustle': {
+        name: 'Tech & Hustle',
+        icon: 'ph-laptop',
+        badge: 'Digital Economy',
+        heroTag: 'Remote Work & Student Solarpunk',
+        heroTitle: 'Dollar Gigs, Coding Roles & Solar Rigs',
+        heroDesc: 'Meet the Nigerian undergraduates earning $300 to $1,200 monthly in remote writing, video editing, and development from their lodges while building custom solar inverters to beat power blackouts.',
+        stats: 'Skill Guides • Payment Platforms • Survival Blueprints',
+        bannerColor: 'from-cyan-950 via-brand-800 to-brand-950',
+        subfilters: ['All', 'Remote Gigs', 'DIY Solar', 'Fintech Hacks']
+      },
+      'Music & Buzz': {
+        name: 'Music & Buzz',
+        icon: 'ph-waveform',
+        badge: 'Afrobeats Radar',
+        heroTag: 'Sound Evolution & Chart Trends',
+        heroTitle: 'Campus Bluetooth Anthems & Pop Gossip',
+        heroDesc: 'Inside the underground bedroom producers and new vocalists blending Fuji vocals with Amapiano log drums, topping student playlists before corporate labels even know their names.',
+        stats: 'Audiomack & Spotify Charts • Live Acoustic Lounges',
+        bannerColor: 'from-purple-950 via-brand-800 to-brand-950',
+        subfilters: ['All', 'Afro-Fuji', 'Bedroom Producers', 'Campus Drama']
+      }
+    };
+
+    // Full 12 Detailed Articles with verified Nigerian, Campus, and Abeokuta details
+    const MASTER_ARTICLES_DATABASE = [
+      {
+        id: 'dispatch-01',
+        title: 'The 5 Campuses Rundown: Inside the Survival Battles, Shuttle Hustle & Street Drip Across TASUED, FUNAAB, MAPOLY, OOU & UNILAG',
+        category: 'Campus Gist',
+        subtag: 'TASUED',
+        date: 'Sept 7, 2026',
+        readTime: '10 min read',
+        author: {
+          name: 'Dayo Adebiyi',
+          role: 'Senior Campus Affairs Editor',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Undergraduates moving between lectures across Southwestern Nigerian tertiary institutions.',
+        excerpt: 'From CEPEP queues in TASUED and Alabata rent negotiations in FUNAAB, to Ojere canteen rushes in MAPOLY, Ago-Iwoye solar rigs in OOU, and Akoka cab surges in UNILAG—here is how Nigerian students are thriving against all odds.',
+        content: `
+          <p>If you have ever spent a semester in any Nigerian public or state institution, you understand that academic life here is equal parts resilience, community camaraderie, and immaculate street style. Across Ogun State and Lagos, five premier institutions—<strong>TASUED (Ijagun), FUNAAB (Abeokuta), MAPOLY (Ojere), OOU (Ago-Iwoye), and UNILAG (Akoka)</strong>—form the undisputed cultural and intellectual heartbeat of Southwestern Nigerian youth.</p>
+
+          <p>Despite macroeconomic inflation, fuel pump adjustments, and regional electricity challenges, these campuses do not merely survive—they produce ground-breaking music producers, independent fashion brands, remote tech engineers, and student leaders whose influence dictates national trends.</p>
+
+          <h2>1. TASUED (Ijagun): The CEPEP Transport Standoff & Student Solidarity</h2>
+          <p>At Tai Solarin University of Education, the daily rhythm begins and ends along the legendary CEPEP shuttle corridor in Ijebu Ode. When private shuttle drivers arbitrarily attempted to hike transit fares from ₦300 to ₦500 ahead of early morning General Studies examinations, the student body responded with peaceful, disciplined diplomacy. Convening at the Student Union building, class representatives successfully negotiated rush-hour fares back to ₦350, proving once again that student unity remains an unbreakable fortress.</p>
+
+          <h2>2. FUNAAB (Alabata): The Motion Ground Runway & Camp Living Realities</h2>
+          <p>Step onto FUNAAB's Motion Ground at 12:30 PM on any Wednesday, and you will witness an open-air haute couture runway: oversized vintage washed denims sourced directly from Abeokuta's Kuto Market, cropped utility jackets, and chunky retro accessories. Students seamlessly transition from agricultural field practicals in boots into sharp streetwear aesthetics. Meanwhile, the off-campus lodging axis between Camp junction and Alabata village continues to see students pooling resources for solar generators to study uninterrupted through night shifts.</p>
+
+          <h2>3. MAPOLY (Ojere): The Hilltop Survival Haven</h2>
+          <p>Perched high above Abeokuta on the hills of Ojere, Moshood Abiola Polytechnic students swear by their culinary survival institutions. When grueling mass communication and accounting exams drain physical energy, the legendary ₦800 canteen bowl of piping hot Amala, rich Gbegiri, and firewood-smoked beef restores instant focus. MAPOLY remains an undeniable hub for media creatives, video directors, and street-smart commerce.</p>
+
+          <h2>4. OOU (Ago-Iwoye): The Student Solarpunk & Digital Guild</h2>
+          <p>Faced with erratic power distribution across Ago-Iwoye student lodges, computer science and graphic design undergraduates took matters into their own hands. Banding together, they engineered custom DIY DC solar inverter setups for under ₦75,000, powering laptops 24/7 and safeguarding thousands of dollars in international freelance writing, coding, and remote contracts.</p>
+
+          <h2>5. UNILAG (Akoka): The Fast-Paced Lagos Metropolitan Vibe</h2>
+          <p>From New Hall nightlife and tech incubator meetups to taking the 60-minute fast train back to Abeokuta for quiet weekend resets, UNILAG undergraduates set the national benchmark for music, entertainment PR, and social commerce startups. Even with Lagos traffic and transit costs, Akoka youth continue to lead conversations on culture, podcasting, and digital enterprise across the continent.</p>
+        `,
+        faqs: [
+          {
+            q: "Which of the 5 campuses has the most active fashion and streetwear scene?",
+            a: "FUNAAB's Motion Ground and UNILAG's New Hall axis are widely considered the two biggest campus fashion and streetwear hubs in the South-West."
+          },
+          {
+            q: "How do students in Ago-Iwoye manage power outages for their laptops?",
+            a: "Through student-built DIY solar setups combining 100W panels, affordable batteries, and charge controllers to bypass commercial charging centers."
+          },
+          {
+            q: "What is the fastest way to travel between UNILAG (Lagos) and Abeokuta campuses?",
+            a: "The standard gauge railway from Mobolaji Johnson Station in Ebute Metta (Lagos) to Wole Soyinka Station in Laderin (Abeokuta) takes roughly 60 minutes."
+          }
+        ],
+        comments: [
+          { name: "Segun (TASUED Edu/Pol)", time: "18 mins ago", text: "CEPEP gate morning rush is legendary! Glad you captured what we go through daily." },
+          { name: "Blessing (UNILAG MassComm)", time: "42 mins ago", text: "The Lagos-to-Abeokuta train on Friday afternoon is literally our second campus lounge haha." }
+        ]
+      },
+      {
+        id: 'dispatch-02',
+        title: 'Naija Pulse: How Young Nigerians Are Beating Fuel Hikes, Telco Data Tariffs & Living Smart in 2026',
+        category: 'Naija Pulse',
+        subtag: 'National Economy',
+        date: 'Sept 6, 2026',
+        readTime: '9 min read',
+        author: {
+          name: 'Dayo Adebiyi',
+          role: 'National Culture Columnist',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Commuters, tech freelancers, and young workers navigating public transit and daily commerce in urban Nigeria.',
+        excerpt: 'From group ride-shares and peer-to-peer data pooling to switching to renewable mini inverters, Nigerian youth are rewriting the survival playbook with humor, tech, and grit.',
+        content: `
+          <p>Every Nigerian knows that thriving in the current economic weather requires intentional, proactive strategy. With adjustments to transportation fares and telco data plans across major networks, the average student, freelance creative, and young 9-to-5 professional has had to re-engineer their monthly budget from scratch.</p>
+
+          <p>Yet, instead of despairing or slowing down, Nigerian youth have turned to ingenious community hacks: neighborhood shared carpools, hostel Wi-Fi routers powered by pooled monthly contributions, cooperative bulk dry-food buying directly from hinterland farm markets, and switching to decentralized fintech accounts that protect against currency volatility.</p>
+
+          <blockquote>"You cannot survive in Nigeria today if you are doing solo runs. My three flatmates and I buy our rice, beans, garri, and groundnut oil directly from farm gates in rural Ogun State, and it saves us over ₦40,000 every single month." — <em>Kareem, 25, Digital Content Lead in Yaba</em>.</blockquote>
+
+          <h2>The 4 Smart Survival Blueprints Nigerian Youth Swear By</h2>
+          <p><strong>1. Data Optimization Tactics:</strong> Heavy video lectures, Figma design assets, and podcast episodes are scheduled for download during off-peak night bundles (12:00 AM to 5:00 AM) when telecom rates drop by up to 60%. Background video auto-play on Instagram and TikTok is strictly disabled.</p>
+
+          <p><strong>2. Peer-to-Peer Food Stocking:</strong> Lodges in campus towns like Camp (Abeokuta), Ijagun, and Yaba create weekly cooking rotations where bulk soups and stews are prepared in large pots, cutting gas refill costs and minimizing food waste.</p>
+
+          <p><strong>3. Micro-Freelancing & Foreign Currency Hedging:</strong> Undergraduates are monetizing high-demand technical skills—such as video editing for YouTubers in the UK, ghostwriting, and virtual assistance—earning in USD and converting via verified peer-to-peer fintech platforms to hedge against local price surges.</p>
+
+          <p><strong>4. Transit Carpooling & Train Commuting:</strong> Commuters traveling between Lagos and Ogun State now bypass high interstate bus fares by booking collective ride-shares through student WhatsApp groups or taking the reliable, air-conditioned federal railway line.</p>
+        `,
+        faqs: [
+          {
+            q: "What are the best apps for tracking monthly expenses in Nigeria?",
+            a: "Fintech savings apps like Piggyvest, Cowrywise, and simple mobile spreadsheets remain top favorites for separating savings from everyday pocket money."
+          },
+          {
+            q: "How can students save money on internet data?",
+            a: "Leverage nocturnal midnight bundle promotions, set strict background data limits on social apps, and use offline downloads during campus Wi-Fi access."
+          }
+        ],
+        comments: [
+          { name: "Tariq Lagos", time: "1 hour ago", text: "This article speaks pure facts. Community buying has saved my flat this entire year." }
+        ]
+      },
+      {
+        id: 'dispatch-03',
+        title: 'The Ultimate Thrift Code: How To Score Designer Drip at Kuto (Abeokuta) & Yaba (Lagos) for Under ₦6,000',
+        category: 'Fashion & Drip',
+        subtag: 'Thrift Hunting',
+        date: 'Sept 5, 2026',
+        readTime: '8 min read',
+        author: {
+          name: 'Lolly Slay',
+          role: 'Lead Fashion Director',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'A street fashion enthusiast styling thrifted vintage denim and graphic tee.',
+        excerpt: 'Forget boutique markups on the Island. The real fashion secret powering motion ground runways and street aesthetic lookbooks happens at 6:30 AM every Tuesday at Kuto Market and Yaba Railway.',
+        content: `
+          <p>If you scroll through Nigerian fashion TikTok or walk through tertiary campus squares on any lecture day, you will see heavyweight acid-wash denims, vintage boxy graphic tees, and tailored worker jackets that look straight off a Milan or Tokyo runway.</p>
+
+          <p>Yet when you ask the most effortlessly dressed stylists for their secret plugs, none of them bought their pieces from overpriced shopping mall boutiques. The undisputed heartbeat of Nigerian youth fashion is built on <strong>first-grade vintage thrift (Okrika)</strong>.</p>
+
+          <blockquote>"The real drip isn't how much money you spent; it's your eye for silhouette, fabric weight, and how your campus tailor cinches the waist." — <em>Dami, Streetwear Stylist</em>.</blockquote>
+
+          <h2>The 4 Golden Rules of Thrift Slaying in Abeokuta and Lagos</h2>
+          <p><strong>1. Arrive When Fresh Bales Pop:</strong> Tuesday and Friday mornings at Kuto (Abeokuta) and Wednesday mornings under Yaba bridge (Lagos) between 6:00 AM and 8:30 AM are prime time. The first buyers always pick the untouched Japanese selvedge denim and Carhartt worker jackets.</p>
+
+          <p><strong>2. Respectful Market Etiquette:</strong> Greet the market mamas warmly in fluent Yoruba or Pidgin. Bundling three pieces together immediately slashes ₦7,000 asking prices down to ₦3,500 without friction.</p>
+
+          <p><strong>3. Tailor Alteration Magic:</strong> Never dismiss a pair of trousers because the waist is a size 36 while you are a size 30. A quick ₦1,500 adjustment by your local campus tailor can take a baggy pair and create a snatched, pleated statement fit.</p>
+
+          <p><strong>4. Fabric Disinfection & Ironing:</strong> Always wash thrifted treasures in warm salt water and detergent before giving them a crisp steam press. The fabric will look brand-new and smell completely fresh.</p>
+        `,
+        faqs: [
+          {
+            q: "What is the best day to visit Kuto market in Abeokuta for clothes?",
+            a: "Tuesday morning from 6:30 AM is when first-grade bales of jeans, corduroys, and outerwear jackets are opened."
+          },
+          {
+            q: "Can I pay market sellers using bank transfers?",
+            a: "Most elder traders strongly prefer cash or verified OPay POS slips due to network congestion inside the crowded market aisles."
+          }
+        ],
+        comments: [
+          { name: "Eniola FUNAAB", time: "30 mins ago", text: "Shhhh don't expose our Kuto plug o! Now everyone will wake up at 5:30 AM haha." }
+        ]
+      },
+      {
+        id: 'dispatch-04',
+        title: 'Naija Food Trail: From MAPOLY Ojere Amala to Surulere Suya Grills, The 6 Street Spots That Hit Different',
+        category: 'Food & Chow',
+        subtag: 'Amala Institutions',
+        date: 'Sept 4, 2026',
+        readTime: '8 min read',
+        author: {
+          name: 'Chidi Bites',
+          role: 'Editorial Food Critic',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Steaming Nigerian delicacy served fresh with peppered assorted meats and authentic firewood aroma.',
+        excerpt: 'We tested the most celebrated street food joints across Lagos and Ogun State. Here is our unvarnished verdict on the spots where ₦1,500 still buys pure culinary paradise.',
+        content: `
+          <p>Fine dining has its place, but authentic Nigerian happiness lives on the street side where the aroma of burning firewood, crushed Yaji pepper, and simmering palm oil stew welcomes you from fifty meters away.</p>
+
+          <p>Our editorial team embarked on an intensive food crawl connecting Ogun State campuses and Lagos nightlife hubs to identify the joints where quality, portion size, and flavor remain top-tier despite general price inflation.</p>
+
+          <h2>The Unbeatable Food Champions You Must Visit</h2>
+          <p><strong>1. Mama Shukura (Ojere, MAPOLY):</strong> The undeniable queen of Amala in Abeokuta. For ₦800 to ₦1,200, you get cloud-soft Amala drenched in rich Gbegiri and steaming Ewedu, topped with tender ponmo or beef that melts on contact.</p>
+
+          <p><strong>2. Glover Court Suya (Ikoyi & Surulere, Lagos):</strong> Thinly sliced beef tossed over glowing hot coals, generously coated with fresh onions, hot peppers, and traditional spice blends that define Lagos midnight culture.</p>
+
+          <p><strong>3. Camp Chicken & Shawarma Alley (Abeokuta):</strong> The late-night lifesaver for FUNAAB students returning from late library study shifts or off-campus hangouts.</p>
+
+          <p><strong>4. University of Ibadan Faculty Cafeterias:</strong> Famous for massive mounds of jollof rice paired with fried fish at unbeatable student pricing.</p>
+        `,
+        faqs: [
+          {
+            q: "How much is an average satisfying lunch at traditional student canteens?",
+            a: "Between ₦800 and ₦1,500 will secure a hearty meal complete with meat and a cold drink."
+          },
+          {
+            q: "What makes Ojere Amala unique compared to city fast food?",
+            a: "The authentic firewood smoke flavor, fresh vegetable stews cooked in small batches, and generous portions."
+          }
+        ],
+        comments: [
+          { name: "Bimbo Ojere", time: "2 hours ago", text: "The amala with extra gbegiri! Best part of schooling on the hills hands down." }
+        ]
+      },
+      {
+        id: 'dispatch-05',
+        title: 'Afrobeats Radar: The Sound Evolution, New Breakout Records & What Is Bumping in Nigerian Street Lounges',
+        category: 'Music & Buzz',
+        subtag: 'Afro-Fuji',
+        date: 'Sept 3, 2026',
+        readTime: '7 min read',
+        author: {
+          name: 'Dayo Adebiyi',
+          role: 'Entertainment Desk',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Live acoustic lounge and youth gathering enjoying new Afrobeats and fusion rhythms.',
+        excerpt: 'While global superstars fill international stadiums, underground campus producers in Akoka and Abeokuta are pioneering the next wave of high-energy Afro-fusion and Amapiano bangers.',
+        content: `
+          <p>Step inside any student lounge, campus salon, or chill garden from Abeokuta to Akoka, and you will hear a distinct sonic evolution: log drums blended with nostalgic Fuji vocal samples, high-tempo Afro-house, and melodic street confessions.</p>
+
+          <p>Nigerian youth do not wait for mainstream radio charts to tell them what sounds good. Viral TikTok dance challenges, peer-to-peer Bluetooth sharing in university hostels, and DJ mixes played in campus shuttles break new artists weeks before corporate record labels even draft a contract.</p>
+
+          <blockquote>"Afrobeats is no longer a single sound; it has evolved into a movement of sub-genres. From bedroom studio producers in Ago-Iwoye to creative squads in Lagos, the hunger to create something authentic has never been higher." — <em>DJ K-Vibe</em>.</blockquote>
+
+          <h2>The 3 Underground Trends Dominating Nigerian Playlists</h2>
+          <p><strong>1. Fuji-Piano Fusion:</strong> Young producers are sampling legendary Yoruba Fuji percussions over South African Amapiano basslines, creating a sound that makes dancefloors erupt instantly.</p>
+          <p><strong>2. Bedroom Pop Confessions:</strong> Female singer-songwriters writing relatable lyrics about surviving university stress, campus relationships, and financial independence.</p>
+          <p><strong>3. DIY Sound Engineering:</strong> With just an audio interface, a condenser mic, and FL Studio running on a refurbished laptop, hostel rooms are generating million-stream Audiomack hits.</p>
+        `,
+        faqs: [
+          {
+            q: "Which streaming platform is most popular among Nigerian youth?",
+            a: "Audiomack and Spotify remain top choices due to flexible offline downloads and student pricing tiers."
+          }
+        ],
+        comments: [
+          { name: "DJ K-Vibe", time: "3 hours ago", text: "The raw underground sound coming out of campus studios right now is unbeatable!" }
+        ]
+      },
+      {
+        id: 'dispatch-06',
+        title: 'Remote Hustle & Dollar Gigs: How Nigerian Undergrads Are Bagging Tech & Writing Roles While in School',
+        category: 'Tech & Hustle',
+        subtag: 'Remote Gigs',
+        date: 'Sept 2, 2026',
+        readTime: '8 min read',
+        author: {
+          name: 'Techie Amina',
+          role: 'Digital Economy Correspondent',
+          avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'A student working on code and creative design contracts from their room.',
+        excerpt: 'Between 8 AM classes and exams, meet the undergraduates earning $300 to $1,200 monthly in remote copy, video editing, and frontend development without stepping outside their lodges.',
+        content: `
+          <p>The stereotype of the broken, helpless university student in Nigeria is rapidly dying. Armed with a refurbished laptop, a pocket Wi-Fi device, and acquired digital skills, thousands of Nigerian youths are quietly earning in foreign currencies.</p>
+
+          <p>From UI/UX design and technical writing to TikTok short-form video editing and AI prompt engineering, global companies in the US, UK, and Canada are actively hiring talented African youth for remote contracts.</p>
+
+          <blockquote>"When you earn in foreign currency, inflation doesn't paralyze you; it motivates you to deliver higher quality work for your clients." — <em>Olamide, 400L OOU Computer Science</em>.</blockquote>
+
+          <h2>How to Start Your Remote Hustle Journey in Nigeria</h2>
+          <p><strong>1. Pick One Marketable Skill:</strong> Master Figma for design, Webflow/React for websites, or CapCut/Premiere for video content. Avoid trying to learn ten different things at once.</p>
+          <p><strong>2. Build Proof of Work:</strong> Rather than writing long theoretical CVs, create 3 real sample projects and host them publicly on GitHub, Behance, or your own portfolio site.</p>
+          <p><strong>3. Protect Your Power Supply:</strong> Invest in a mini DC solar rig or a reliable portable power station so unannounced power blackouts never ruin important client Zoom meetings.</p>
+        `,
+        faqs: [
+          {
+            q: "What payment platforms do Nigerian remote freelancers use to receive funds?",
+            a: "Platforms like Geegpay, Grey, and Payoneer are standard for creating virtual dollar/pound accounts that convert directly to Naira."
+          }
+        ],
+        comments: [
+          { name: "OOU_Dev", time: "4 hours ago", text: "Learning React and building my portfolio during strike changed my entire financial story!" }
+        ]
+      },
+      {
+        id: 'dispatch-07',
+        title: 'UNILAG to Abeokuta Weekend Escapes: Why Lagos Students Board the Train for Olumo Rock & Kemta Chills',
+        category: 'Naija Pulse',
+        subtag: 'UNILAG',
+        date: 'Sept 1, 2026',
+        readTime: '8 min read',
+        author: {
+          name: 'Lolly Slay',
+          role: 'Culture Columnist',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Young tourists and creatives exploring historic landmarks and aesthetic spots in Abeokuta.',
+        excerpt: 'Tired of Lagos gridlock traffic and expensive island weekend brunches, Akoka undergraduates are taking the 60-minute fast train straight to Abeokuta for peaceful, aesthetic weekend getaways.',
+        content: `
+          <p>On any Friday afternoon at Mobolaji Johnson Train Station in Ebute Metta (Lagos), you will spot a lively contingent of University of Lagos (UNILAG) students holding canvas duffels. Their weekend destination? <strong>Abeokuta</strong>.</p>
+
+          <p>With standard gauge trains making the journey in approximately one hour, the ancient city of rocks has transformed into the primary weekend sanctuary for university youth seeking fresh air, artistic inspiration, and affordable relaxation.</p>
+
+          <h2>The Ideal 48-Hour Student Itinerary in Abeokuta</h2>
+          <p><strong>Friday Night:</strong> Arrive at Wole Soyinka Station in Laderin, head to Kemta Housing for fresh smoothies, live acoustic sets, and spicy suya boards under fairy lights.</p>
+          <p><strong>Saturday Morning:</strong> Climb Olumo Rock early to catch the sweeping mist over ancient rusty tin roofs, followed by an Adire fabric dyeing workshop in Itoku.</p>
+          <p><strong>Sunday Afternoon:</strong> Savor authentic local delicacies before catching the 4:00 PM return train back to Lagos in time for Monday 8 AM lectures.</p>
+        `,
+        faqs: [
+          {
+            q: "How much is the train ticket from Lagos to Abeokuta?",
+            a: "Standard class tickets range from ₦3,000 to ₦4,500 one way in comfortable air-conditioned coaches."
+          },
+          {
+            q: "What is the entrance fee for students at Olumo Rock?",
+            a: "With a valid student ID card, entrance tickets cost roughly ₦1,000 to ₦1,500."
+          }
+        ],
+        comments: [
+          { name: "Tiwa UNILAG", time: "1 day ago", text: "Did this trip two weekends ago with my roommates and we spent under ₦25k each. So refreshing!" }
+        ]
+      },
+      {
+        id: 'dispatch-08',
+        title: 'TASUED & FUNAAB Adire Revolution: How Undergrads Are Taking Abeokuta Indigo Prints to Global Runways',
+        category: 'Fashion & Drip',
+        subtag: 'TASUED',
+        date: 'Aug 30, 2026',
+        readTime: '7 min read',
+        author: {
+          name: 'Lolly Slay',
+          role: 'Lead Fashion Director',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'A young female designer tailoring contemporary Adire silk prints inside a student studio.',
+        excerpt: 'Meet the undergraduates across TASUED and FUNAAB who are transforming local Ogun State Adire fabric into modern streetwear hoodies, corsets, and runway-ready baggy shorts.',
+        content: `
+          <p>Abeokuta has always been the historic global heartland of indigo Adire craftsmanship. But in 2026, university students in Ogun State have taken that centuries-old heritage and fused it directly with international streetwear silhouettes.</p>
+
+          <p>Rather than waiting for traditional corporate jobs, these student founders are operating booming online boutiques directly from their hostel rooms, exporting hand-dyed Adire workwear jackets, oversized shorts, and cropped corsets to fashion lovers in London, New York, and across West Africa.</p>
+
+          <blockquote>"We grew up watching our grandmothers mix indigo dye in Itoku. We decided to take those exact patterns and put them on skate hoodies and cargo pants. It is African heritage made for our generation." — <em>Dami, 400L Creative Arts</em>.</blockquote>
+
+          <h2>The Economics of the Campus Hustle</h2>
+          <p>With an initial fabric capital of roughly ₦25,000, students source plain cotton fabrics and raw dye directly from elder artisans in Abeokuta, collaborate with local master tailors, and shoot aesthetic campaign lookbooks using iPhones on campus grounds. It is creative enterprise at its most inspiring.</p>
+        `,
+        faqs: [
+          {
+            q: "Where can someone buy authentic student-made modern Adire in Abeokuta?",
+            a: "Pop-up weekend markets around Panseke, Kemta, and direct WhatsApp catalogs operated by campus creators."
+          }
+        ],
+        comments: [
+          { name: "Korede TASUED", time: "2 days ago", text: "Proud to see our indigenous Ogun craft hitting international fashion moodboards!" }
+        ]
+      },
+      {
+        id: 'dispatch-09',
+        title: 'OOU Ago-Iwoye Solarpunk: The Student Guild Building Off-Grid Power Rigs for Under ₦75,000',
+        category: 'Tech & Hustle',
+        subtag: 'OOU',
+        date: 'Aug 29, 2026',
+        readTime: '8 min read',
+        author: {
+          name: 'Techie Amina',
+          role: 'Digital Economy Correspondent',
+          avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'A workspace illuminated by DC solar bulbs and dual laptop battery monitors in Ago-Iwoye.',
+        excerpt: 'When public power supply in Ago-Iwoye threatened remote writing and coding contracts, OOU undergraduates banded together to build custom DIY DC solar rigs to safeguard their livelihood.',
+        content: `
+          <p>At Olabisi Onabanjo University (OOU) in Ago-Iwoye, students studying Computer Science and Graphic Design were tired of paying ₦500 daily at commercial business centers just to keep their laptops powered for client deadlines.</p>
+
+          <p>Enter the <strong>Ago-Iwoye Student Solar Guild</strong>: an open-source peer movement sharing engineering diagrams for affordable off-grid power stations. Combining a 100W solar panel, a deep-cycle battery, and a PWM charge controller, rooms stay lit 24/7 without the deafening noise or expensive fuel costs of petrol generators.</p>
+
+          <blockquote>"I was on the verge of losing a $400 monthly remote copywriting contract because my lodge had zero power for four straight days. Building my mini solar rig saved my job and paid for my final year clearance." — <em>Kehinde, 400L OOU</em>.</blockquote>
+        `,
+        faqs: [
+          {
+            q: "How much does a basic student solar setup cost in Ago-Iwoye?",
+            a: "A functional DC lighting plus laptop-charging mini setup costs roughly ₦75,000 to ₦95,000 when assembled with peer assistance."
+          }
+        ],
+        comments: [
+          { name: "OOU_Dev", time: "2 days ago", text: "No more generator noise or fight over lodge fuel contributions. Clean silent power!" }
+        ]
+      },
+      {
+        id: 'dispatch-10',
+        title: 'Camp vs Alabata Food Crawl: Inside the Best Suya, Shawarma & Late-Night Buka Joints in FUNAAB',
+        category: 'Food & Chow',
+        subtag: 'FUNAAB',
+        date: 'Aug 28, 2026',
+        readTime: '7 min read',
+        author: {
+          name: 'Chidi Bites',
+          role: 'Editorial Food Critic',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Spicy Nigerian street delicacies and grilled meats served late night along student transit corners.',
+        excerpt: 'Whether you are returning from TDB reading shifts or chilling on Friday night, here are the late-night food champions around Camp junction that never miss.',
+        content: `
+          <p>Every FUNAAB student knows that after a grueling day of agricultural practicals and physics lectures, cooking in the hostel is often the last thing on anyone's mind.</p>
+
+          <p>Our food desk spent a weekend tasting through the famous shawarma spots, peppered chicken grills, and 24-hour buka canteens situated around the Camp junction and Alabata gates to curate the ultimate student dining ranking.</p>
+
+          <h2>Top Late-Night Food Stops That Deliver Every Time</h2>
+          <p><strong>1. The Camp Shawarma Alley:</strong> Known for generously spiced double-sausage wraps dripping with signature cream sauce that keep lines packed until 11:30 PM.</p>
+          <p><strong>2. Mama Bisi's 24-Hour Buka:</strong> For students who need hot white rice with rich ayamase sauce or steaming hot amala at 2:00 AM during examination reading periods.</p>
+        `,
+        faqs: [
+          {
+            q: "What are the operating hours for food spots around Camp junction?",
+            a: "Most shawarma and suya spots operate actively from 5:00 PM until midnight on weekdays, extending later on weekends."
+          }
+        ],
+        comments: [
+          { name: "FUNAAB_Guy", time: "3 days ago", text: "Camp shawarma has saved my life more times than I can count during exams!" }
+        ]
+      },
+      {
+        id: 'dispatch-11',
+        title: 'The Underground Bedroom Producers: How Akoka & Abeokuta Students Are Topping Audiomack Charts',
+        category: 'Music & Buzz',
+        subtag: 'MAPOLY',
+        date: 'Aug 27, 2026',
+        readTime: '6 min read',
+        author: {
+          name: 'Dayo Adebiyi',
+          role: 'Entertainment Desk',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'A student producer working on audio mixing and beats inside a hostel bedroom studio.',
+        excerpt: 'With just a refurbished laptop, a USB condenser microphone, and FL Studio, university undergraduates are crafting viral Afro-fusion records that compete with stadium hits.',
+        content: `
+          <p>Walk past student hostel rooms in Akoka (UNILAG) or private lodges in Camp (FUNAAB) on any Friday afternoon, and you will hear heavy basslines rattling window frames.</p>
+
+          <p>Without expensive commercial recording studio budgets, young bedroom producers are recording, mixing, and mastering breakout records that gain millions of streams on Audiomack and Spotify through viral TikTok dances and student WhatsApp statuses.</p>
+
+          <blockquote>"You don't need a ₦20 million studio anymore. If your song is relatable and your drums hit right, campus students will spread your song everywhere before the radio even notices you exist." — <em>Rexxie-Junior, 300L MAPOLY</em>.</blockquote>
+        `,
+        faqs: [
+          {
+            q: "How can student musicians distribute their songs to streaming platforms?",
+            a: "Services like DistroKid, TuneCore, and local aggregators allow independent artists to upload songs to Apple Music and Spotify for an affordable annual fee."
+          }
+        ],
+        comments: [
+          { name: "Producer_Jay", time: "3 days ago", text: "Hostel acoustics might not be perfect, but the passion and raw talent is 100% real!" }
+        ]
+      },
+      {
+        id: 'dispatch-12',
+        title: 'TASUED Transport Victory: How Student Reps Maintained Subsidized CEPEP Fares and Set a National Standard',
+        category: 'Campus Gist',
+        subtag: 'TASUED',
+        date: 'Aug 26, 2026',
+        readTime: '7 min read',
+        author: {
+          name: 'Dayo Adebiyi',
+          role: 'Senior Campus Affairs Editor',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+        },
+        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+        imageCaption: 'Shuttles and students arriving along the university gateway corridor in Ijagun.',
+        excerpt: 'A detailed retrospective on how Tai Solarin University of Education students used structured dialogue and peaceful diplomacy to protect transport affordability for all.',
+        content: `
+          <p>When student union representatives and transport union leadership convened at the TASUED Student Union building, cynics expected an extended deadlock. Instead, what followed was a masterclass in student advocacy and civic negotiation.</p>
+
+          <p>By conducting a comprehensive survey of average daily allowances and fuel price fluctuations, student representatives presented hard data showing that arbitrary price increases would lead to massive absenteeism in 8:00 AM general lecture halls.</p>
+
+          <p>The resulting accord established a joint monitoring taskforce at the CEPEP roundabout, guaranteeing fixed student fares during peak morning exam hours. The TASUED model is now being studied by student bodies across tertiary institutions in the South-West as a gold standard for campus advocacy.</p>
+        `,
+        faqs: [
+          {
+            q: "How can students report drivers who violate the negotiated fare at CEPEP?",
+            a: "A student union taskforce desk is stationed at the loading gate with visible identification badges to resolve immediate price disputes."
+          }
+        ],
+        comments: [
+          { name: "Tolani TASUED", time: "4 days ago", text: "Leadership that actually fights for students. Proud to be a TASUEDite!" }
+        ]
+      }
+    ];
+
+    let activeCurrentView = 'home'; // 'home' | 'category' | 'reader'
+    let selectedActivePortal = null;
+    let currentCategorySubfilter = 'All';
+    let activeReaderArticleId = null;
+    let priorNavigationState = 'home';
+    let globalSearchFilterTerm = '';
+    let campusPollTallies = [52, 33, 15];
+    let userBookmarkedArticles = JSON.parse(localStorage.getItem('lgd_saved_articles') || '[]');
+
+    // Boot the Magazine Application
+    window.addEventListener('DOMContentLoaded', () => {
+      syncThemeToggleIcon();
+      renderTopNavigationStrip();
+      renderCategoryShortcutsGrid();
+      renderLeadStoryCover();
+      renderMainArticlesFeed();
+      renderTrendingStoriesSidebar();
+      refreshBookmarkCounterBadge();
+
+      // Top Reading Progress Tracker
+      window.addEventListener('scroll', () => {
+        if (activeCurrentView === 'reader') {
+          const docScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          const fullHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const progressPercent = (docScroll / fullHeight) * 100;
+          const progressIndicator = document.getElementById('reading-progress-line');
+          if (progressIndicator) progressIndicator.style.width = `${progressPercent}%`;
+        }
+      });
+    });
+
+    // Theme Mode Toggle (Dark & Light)
+    function toggleThemeMode() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('lgd_theme', 'light');
+        showInteractiveToast("☀️ Switched to Light Mode");
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('lgd_theme', 'dark');
+        showInteractiveToast("🌙 Switched to Dark Mode");
+      }
+      syncThemeToggleIcon();
+      renderTopNavigationStrip();
+    }
+
+    function syncThemeToggleIcon() {
+      const icon = document.getElementById('theme-toggle-icon');
+      if (!icon) return;
+      if (document.documentElement.classList.contains('dark')) {
+        icon.className = 'ph-sun ph-bold text-lg text-amber-400';
+      } else {
+        icon.className = 'ph-moon ph-bold text-lg text-slate-700';
+      }
+    }
+
+    function showInteractiveToast(msg) {
+      const toastEl = document.getElementById('interactive-toast');
+      const textEl = document.getElementById('toast-text');
+      textEl.innerText = msg;
+      toastEl.classList.remove('hidden');
+      toastEl.classList.add('flex');
+      setTimeout(() => {
+        toastEl.classList.add('hidden');
+        toastEl.classList.remove('flex');
+      }, 3500);
+    }
+
+    function renderTopNavigationStrip() {
+      const stripContainer = document.getElementById('topic-navigation-strip');
+      const portals = Object.keys(CATEGORIES_PORTALS_CONFIG);
+
+      let markup = `
+        <button
+          onclick="showHomePage(event)"
+          class="px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+            activeCurrentView === 'home' && !globalSearchFilterTerm
+              ? 'bg-brand-600 text-white shadow-md shadow-brand-600/20' 
+              : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'
+          }"
+        >
+          ⚡ Home Feed
+        </button>
+      `;
+
+      // Quick 5 Campuses Shortcut
+      markup += `
+        <button
+          onclick="triggerCampusFilter('TASUED')"
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 dark:hover:text-sky-400 border border-slate-200 dark:border-slate-700 flex items-center gap-1"
+        >
+          <span>TASUED</span>
+        </button>
+        <button
+          onclick="triggerCampusFilter('FUNAAB')"
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 dark:hover:text-sky-400 border border-slate-200 dark:border-slate-700 flex items-center gap-1"
+        >
+          <span>FUNAAB</span>
+        </button>
+      `;
+
+      portals.forEach(portalKey => {
+        const portal = CATEGORIES_PORTALS_CONFIG[portalKey];
+        const isCurrent = activeCurrentView === 'category' && selectedActivePortal === portalKey;
+        markup += `
+          <button
+            onclick="openCategoryPortal('${portalKey}')"
+            class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
+              isCurrent 
+                ? 'bg-brand-950 dark:bg-brand-600 text-white shadow-sm' 
+                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 hover:text-brand-600 dark:hover:text-sky-400 border border-slate-200 dark:border-slate-700'
+            }"
+          >
+            <i class="${portal.icon} ph-bold text-sm text-brand-600 dark:text-sky-400"></i>
+            <span>${portal.name}</span>
+          </button>
+        `;
+      });
+
+      stripContainer.innerHTML = markup;
+    }
+
+    // Render 6 Category Portal Boxes on Homepage
+    function renderCategoryShortcutsGrid() {
+      const container = document.getElementById('portal-shortcuts-grid');
+      const portals = Object.keys(CATEGORIES_PORTALS_CONFIG);
+
+      container.innerHTML = portals.map(key => {
+        const p = CATEGORIES_PORTALS_CONFIG[key];
+        const count = MASTER_ARTICLES_DATABASE.filter(a => a.category === key).length;
+        return `
+          <div 
+            onclick="openCategoryPortal('${key}')"
+            class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 hover:bg-brand-50/80 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700 hover:border-brand-400/80 dark:hover:border-sky-400 transition-all cursor-pointer group flex flex-col justify-between shadow-sm"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-brand-600 dark:text-sky-400 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-xs">
+                <i class="${p.icon} ph-bold"></i>
+              </span>
+              <span class="text-[10px] font-mono text-brand-700 dark:text-sky-300 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-2 py-0.5 rounded-full font-bold">${count} Reads</span>
+            </div>
+            <div>
+              <h4 class="font-display font-black text-xs text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors">
+                ${p.name}
+              </h4>
+              <span class="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">${p.badge}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function showHomePage(e) {
+      if (e) e.preventDefault();
+      activeCurrentView = 'home';
+      selectedActivePortal = null;
+      activeReaderArticleId = null;
+
+      document.getElementById('home-view').classList.remove('hidden');
+      document.getElementById('category-portal-view').classList.add('hidden');
+      document.getElementById('article-reader-view').classList.add('hidden');
+      document.getElementById('reading-progress-line').style.width = '0%';
+
+      renderMainArticlesFeed();
+      renderTopNavigationStrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Trigger Quick Campus Filter directly from navigation or sidebar
+    function triggerCampusFilter(campusName) {
+      closeAllSearchDropdowns();
+      const desktopSearch = document.getElementById('desktop-search-input');
+      const mobileSearch = document.getElementById('mobile-search-input');
+      if (desktopSearch) desktopSearch.value = campusName;
+      if (mobileSearch) mobileSearch.value = campusName;
+      handleLiveSearch(campusName);
+      
+      const searchBanner = document.getElementById('search-results-banner');
+      if (searchBanner) {
+        searchBanner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function handleSearchSubmit(e, inputId) {
+      if (e) e.preventDefault();
+      const input = document.getElementById(inputId);
+      const val = input ? input.value.trim() : '';
+      if (!val) return;
+
+      closeAllSearchDropdowns();
+      handleLiveSearch(val);
+
+      const searchBanner = document.getElementById('search-results-banner');
+      if (searchBanner) {
+        searchBanner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        const feedSection = document.getElementById('articles-feed-section');
+        if (feedSection) feedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function handleLiveSearch(val) {
+      globalSearchFilterTerm = (val || '').toLowerCase().trim();
+      
+      if (activeCurrentView !== 'home') {
+        activeCurrentView = 'home';
+        selectedActivePortal = null;
+        activeReaderArticleId = null;
+        document.getElementById('home-view').classList.remove('hidden');
+        document.getElementById('category-portal-view').classList.add('hidden');
+        document.getElementById('article-reader-view').classList.add('hidden');
+      }
+
+      const desktopSearch = document.getElementById('desktop-search-input');
+      const mobileSearch = document.getElementById('mobile-search-input');
+      if (desktopSearch && desktopSearch.value !== val) desktopSearch.value = val;
+      if (mobileSearch && mobileSearch.value !== val) mobileSearch.value = val;
+
+      const searchBanner = document.getElementById('search-results-banner');
+      const leadSection = document.getElementById('lead-story-section');
+      const shortcutsSection = document.getElementById('category-shortcuts-section');
+      const feedSubhead = document.getElementById('feed-subhead-badge');
+      const feedMainHead = document.getElementById('feed-main-heading');
+
+      if (globalSearchFilterTerm) {
+        if (searchBanner) {
+          searchBanner.classList.remove('hidden');
+          document.getElementById('active-search-keyword').innerText = val.trim();
+        }
+        if (leadSection) leadSection.classList.add('hidden');
+        if (shortcutsSection) shortcutsSection.classList.add('hidden');
+        if (feedSubhead) feedSubhead.innerText = `Filtered Dispatches`;
+        if (feedMainHead) feedMainHead.innerText = `Articles matching "${val.trim()}"`;
+      } else {
+        if (searchBanner) searchBanner.classList.add('hidden');
+        if (leadSection) leadSection.classList.remove('hidden');
+        if (shortcutsSection) shortcutsSection.classList.remove('hidden');
+        if (feedSubhead) feedSubhead.innerText = `Latest Intelligence`;
+        if (feedMainHead) feedMainHead.innerText = `Featured Long Reads & Ground Reports`;
+      }
+
+      renderMainArticlesFeed();
+      renderTopNavigationStrip();
+      renderLiveSearchDropdown(val.trim());
+    }
+
+    function renderLiveSearchDropdown(query) {
+      const desktopDropdown = document.getElementById('desktop-search-dropdown');
+      const mobileDropdown = document.getElementById('mobile-search-dropdown');
+
+      if (!query || query.length < 1) {
+        closeAllSearchDropdowns();
+        return;
+      }
+
+      const q = query.toLowerCase();
+      const matches = MASTER_ARTICLES_DATABASE.filter(item => {
+        return item.title.toLowerCase().includes(q) ||
+               (item.subtag || '').toLowerCase().includes(q) ||
+               item.category.toLowerCase().includes(q) ||
+               item.excerpt.toLowerCase().includes(q) ||
+               item.content.toLowerCase().includes(q);
+      }).slice(0, 5);
+
+      const contentHtml = matches.length === 0 
+        ? `<div class="p-3 text-center text-xs text-slate-500 dark:text-slate-400 font-medium">No direct story found matching "<strong>${query}</strong>". Press Search to browse full archive.</div>`
+        : `
+          <div class="px-2 py-1 flex items-center justify-between text-[10px] font-black uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1.5">
+            <span>Instant Matches (${matches.length})</span>
+            <span class="text-brand-600 dark:text-sky-400">Click to read directly</span>
+          </div>
+          ${matches.map(item => `
+            <div 
+              onclick="selectDropdownStory('${item.id}')"
+              class="p-2 rounded-xl hover:bg-brand-50 dark:hover:bg-slate-800 cursor-pointer flex items-center gap-3 transition-colors group"
+            >
+              <img src="${item.image}" alt="${item.title}" class="w-12 h-12 rounded-xl object-cover shrink-0" onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=LGD'" />
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[9px] font-black uppercase bg-brand-100 dark:bg-slate-700 text-brand-800 dark:text-sky-300 px-1.5 py-0.5 rounded">${item.subtag || item.category}</span>
+                  <span class="text-[10px] text-slate-400 font-medium">${item.readTime}</span>
+                </div>
+                <h5 class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 truncate leading-snug mt-0.5">${item.title}</h5>
+              </div>
+              <i class="ph-arrow-right ph-bold text-slate-400 group-hover:text-brand-600 dark:group-hover:text-sky-400 text-sm"></i>
+            </div>
+          `).join('')}
+          <div class="pt-2 text-center border-t border-slate-100 dark:border-slate-800">
+            <button onclick="handleSearchSubmit(event, 'desktop-search-input')" class="text-[11px] font-bold text-brand-600 dark:text-sky-400 hover:underline">
+              View all results for "${query}" →
+            </button>
+          </div>
+        `;
+
+      if (desktopDropdown) {
+        desktopDropdown.innerHTML = contentHtml;
+        desktopDropdown.classList.remove('hidden');
+      }
+      if (mobileDropdown) {
+        mobileDropdown.innerHTML = contentHtml;
+        mobileDropdown.classList.remove('hidden');
+      }
+    }
+
+    function selectDropdownStory(id) {
+      closeAllSearchDropdowns();
+      openArticleFullReader(id);
+    }
+
+    function closeAllSearchDropdowns() {
+      const desktopDropdown = document.getElementById('desktop-search-dropdown');
+      const mobileDropdown = document.getElementById('mobile-search-dropdown');
+      if (desktopDropdown) desktopDropdown.classList.add('hidden');
+      if (mobileDropdown) mobileDropdown.classList.add('hidden');
+    }
+
+    // Dismiss search dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      const desktopSearch = document.getElementById('desktop-search-input');
+      const mobileSearch = document.getElementById('mobile-search-input');
+      const desktopDropdown = document.getElementById('desktop-search-dropdown');
+      const mobileDropdown = document.getElementById('mobile-search-dropdown');
+
+      if (desktopSearch && desktopDropdown && !desktopSearch.contains(e.target) && !desktopDropdown.contains(e.target)) {
+        desktopDropdown.classList.add('hidden');
+      }
+      if (mobileSearch && mobileDropdown && !mobileSearch.contains(e.target) && !mobileDropdown.contains(e.target)) {
+        mobileDropdown.classList.add('hidden');
+      }
+    });
+
+    function clearSearchQuery() {
+      const desktopSearch = document.getElementById('desktop-search-input');
+      const mobileSearch = document.getElementById('mobile-search-input');
+      if (desktopSearch) desktopSearch.value = '';
+      if (mobileSearch) mobileSearch.value = '';
+      closeAllSearchDropdowns();
+      handleLiveSearch('');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openCategoryPortal(portalKey) {
+      const portalConfig = CATEGORIES_PORTALS_CONFIG[portalKey];
+      if (!portalConfig) return;
+
+      selectedActivePortal = portalKey;
+      currentCategorySubfilter = 'All';
+      activeCurrentView = 'category';
+
+      document.getElementById('home-view').classList.add('hidden');
+      document.getElementById('article-reader-view').classList.add('hidden');
+      const portalView = document.getElementById('category-portal-view');
+      portalView.classList.remove('hidden');
+
+      document.getElementById('portal-breadcrumb-category').innerText = portalConfig.name;
+      document.getElementById('portal-feed-title').innerText = `All Dispatches in ${portalConfig.name}`;
+
+      const heroContainer = document.getElementById('category-portal-hero-container');
+      heroContainer.innerHTML = `
+        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br ${portalConfig.bannerColor} text-white p-6 sm:p-12 shadow-2xl">
+          <div class="max-w-2xl relative z-10 space-y-4">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur text-sky-300 font-mono text-xs font-bold uppercase">
+              <i class="${portalConfig.icon} ph-bold"></i> ${portalConfig.heroTag}
+            </span>
+            <h1 class="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+              ${portalConfig.heroTitle}
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-xl">
+              ${portalConfig.heroDesc}
+            </p>
+            <div class="pt-2 text-xs text-sky-300 font-mono font-bold">
+              ${portalConfig.stats}
+            </div>
+          </div>
+        </div>
+      `;
+
+      renderCategorySubfilters(portalConfig);
+      renderCategoryPortalArticlesStream();
+      renderTopNavigationStrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderCategorySubfilters(portalConfig) {
+      const filterStrip = document.getElementById('category-subfilter-strip');
+      if (!portalConfig.subfilters || portalConfig.subfilters.length <= 1) {
+        filterStrip.innerHTML = '';
+        return;
+      }
+
+      filterStrip.innerHTML = portalConfig.subfilters.map(filterOption => {
+        const isSelected = currentCategorySubfilter === filterOption;
+        return `
+          <button
+            onclick="setCategorySubfilter('${filterOption}')"
+            class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
+              isSelected 
+                ? 'bg-brand-600 text-white shadow-sm' 
+                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'
+            }"
+          >
+            ${filterOption === 'All' ? '⚡ All Dispatches' : filterOption}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategorySubfilter(filterOption) {
+      currentCategorySubfilter = filterOption;
+      const portalConfig = CATEGORIES_PORTALS_CONFIG[selectedActivePortal];
+      if (portalConfig) renderCategorySubfilters(portalConfig);
+      renderCategoryPortalArticlesStream();
+    }
+
+    function renderCategoryPortalArticlesStream() {
+      const articles = MASTER_ARTICLES_DATABASE.filter(a => {
+        const matchCategory = a.category === selectedActivePortal;
+        const matchSubfilter = currentCategorySubfilter === 'All' || 
+                               a.subtag === currentCategorySubfilter ||
+                               a.title.includes(currentCategorySubfilter) ||
+                               a.content.includes(currentCategorySubfilter);
+        return matchCategory && matchSubfilter;
+      });
+
+      document.getElementById('portal-article-count-badge').innerText = `${articles.length} Dispatches`;
+
+      const articlesContainer = document.getElementById('category-portal-articles-stream');
+      if (articles.length === 0) {
+        articlesContainer.innerHTML = `
+          <div class="col-span-2 py-16 text-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-300 dark:border-slate-800 p-8">
+            <h4 class="font-display text-lg font-bold text-slate-700 dark:text-slate-200">No dispatches found for ${currentCategorySubfilter} yet!</h4>
+            <p class="text-xs text-slate-400 mt-1">Our student contributors are currently verifying ground reports.</p>
+          </div>
+        `;
+      } else {
+        articlesContainer.innerHTML = articles.map(item => `
+          <article 
+            onclick="openArticleFullReader('${item.id}')"
+            class="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-sky-400 hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col justify-between"
+          >
+            <div>
+              <div class="aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 relative mb-4">
+                <img 
+                  src="${item.image}" 
+                  alt="${item.title}" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  loading="lazy" 
+                  onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Lolly+Gist'"
+                />
+                <span class="absolute top-3 left-3 bg-brand-950/90 backdrop-blur-md text-sky-400 font-extrabold text-[9px] uppercase px-2.5 py-1 rounded-md">
+                  ${item.subtag || item.category}
+                </span>
+                <span class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
+                  <i class="ph-clock ph-bold"></i> ${item.readTime}
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2 text-[11px] text-slate-400 font-semibold mb-1.5">
+                <span>${item.date}</span>
+                <span>•</span>
+                <span>By ${item.author.name}</span>
+              </div>
+
+              <h3 class="font-display text-xl font-black text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors leading-snug">
+                ${item.title}
+              </h3>
+
+              <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed mt-2 font-normal">
+                ${item.excerpt}
+              </p>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <span class="font-bold text-brand-600 dark:text-sky-400 group-hover:underline flex items-center gap-1">
+                Read Full Story <i class="ph-arrow-right ph-bold"></i>
+              </span>
+              <span class="text-[11px] text-slate-400 font-mono">${item.author.role}</span>
+            </div>
+          </article>
+        `).join('');
+      }
+    }
+
+    function renderMainArticlesFeed() {
+      const container = document.getElementById('main-articles-feed');
+      
+      const filtered = MASTER_ARTICLES_DATABASE.filter(item => {
+        if (!globalSearchFilterTerm) return true;
+        return item.title.toLowerCase().includes(globalSearchFilterTerm) ||
+               (item.subtag || '').toLowerCase().includes(globalSearchFilterTerm) ||
+               item.category.toLowerCase().includes(globalSearchFilterTerm) ||
+               item.excerpt.toLowerCase().includes(globalSearchFilterTerm) ||
+               item.content.toLowerCase().includes(globalSearchFilterTerm) ||
+               item.author.name.toLowerCase().includes(globalSearchFilterTerm);
+      });
+
+      document.getElementById('post-counter-badge').innerText = `${filtered.length} Dispatches`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="py-16 text-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-300 dark:border-slate-800 p-8">
+            <i class="ph-magnifying-glass ph-bold text-4xl text-slate-300 dark:text-slate-600 mb-2"></i>
+            <h4 class="font-display text-lg font-bold text-slate-700 dark:text-slate-200">No articles matched "${globalSearchFilterTerm}"</h4>
+            <p class="text-xs text-slate-400 mt-1">Try searching another campus like TASUED, FUNAAB, MAPOLY, or keywords like thrift, food, or solar.</p>
+            <button onclick="clearSearchQuery()" class="mt-4 px-5 py-2 rounded-full bg-brand-600 text-white text-xs font-bold shadow-sm">
+              Clear Search & Show All
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => `
+        <article 
+          onclick="openArticleFullReader('${item.id}')"
+          class="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-sky-400 hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col sm:flex-row gap-6 items-start shadow-sm"
+        >
+          <div class="w-full sm:w-64 aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 shrink-0 relative">
+            <img 
+              src="${item.image}" 
+              alt="${item.title}" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy" 
+              onerror="this.src='https://placehold.co/400x300/1e3a8a/ffffff?text=Lolly+Gist'"
+            />
+            <span class="absolute top-2.5 left-2.5 bg-brand-950/90 backdrop-blur-md text-sky-400 font-extrabold text-[9px] uppercase px-2 py-0.5 rounded">
+              ${item.subtag || item.category}
+            </span>
+          </div>
+
+          <div class="flex-1 flex flex-col justify-between h-full space-y-2.5">
+            <div>
+              <div class="flex items-center gap-2 text-[11px] text-slate-400 font-medium">
+                <span class="text-brand-600 dark:text-sky-400 font-bold uppercase tracking-wider">${item.category}</span>
+                <span>•</span>
+                <span>${item.date}</span>
+                <span>•</span>
+                <span>${item.readTime}</span>
+              </div>
+
+              <h3 class="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors leading-snug mt-1">
+                ${item.title}
+              </h3>
+
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed mt-2 font-normal">
+                ${item.excerpt}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <img src="${item.author.avatar}" alt="${item.author.name}" class="w-6 h-6 rounded-full object-cover" onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=LGD'" />
+                <span class="font-semibold text-slate-700 dark:text-slate-300 text-xs">${item.author.name}</span>
+              </div>
+              <span class="font-bold text-brand-600 dark:text-sky-400 group-hover:underline flex items-center gap-1">
+                Read Full Story <i class="ph-arrow-right ph-bold"></i>
+              </span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function openArticleFullReader(articleId) {
+      const article = MASTER_ARTICLES_DATABASE.find(a => a.id === articleId);
+      if (!article) return;
+
+      priorNavigationState = activeCurrentView;
+      activeCurrentView = 'reader';
+      activeReaderArticleId = articleId;
+
+      document.getElementById('home-view').classList.add('hidden');
+      document.getElementById('category-portal-view').classList.add('hidden');
+      const readerView = document.getElementById('article-reader-view');
+      readerView.classList.remove('hidden');
+
+      document.getElementById('article-back-button-label').innerText = 
+        priorNavigationState === 'category' ? `Back to ${article.category}` : 'Back to All Stories';
+
+      document.getElementById('article-top-category-badge').innerText = article.category;
+      document.getElementById('article-top-readtime-badge').innerText = `${article.readTime} • ${article.date}`;
+
+      const isSaved = userBookmarkedArticles.includes(article.id);
+
+      const bodyContainer = document.getElementById('article-main-body-content');
+      bodyContainer.innerHTML = `
+        <div class="space-y-6">
+          <div class="space-y-3">
+            <button onclick="openCategoryPortal('${article.category}')" class="inline-block bg-brand-50 dark:bg-slate-800 hover:bg-brand-100 dark:hover:bg-slate-700 border border-brand-200 dark:border-slate-700 text-brand-700 dark:text-sky-300 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider transition-colors">
+              ${article.category} Special
+            </button>
+            <h1 class="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+              ${article.title}
+            </h1>
+          </div>
+
+          <!-- Author Info Strip with Bookmark & Native Share -->
+          <div class="flex flex-wrap items-center justify-between gap-4 p-4 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+            <div class="flex items-center gap-3">
+              <img src="${article.author.avatar}" alt="${article.author.name}" class="w-11 h-11 rounded-full object-cover border-2 border-brand-400" onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=LGD'" />
+              <div>
+                <h4 class="font-display font-bold text-xs sm:text-sm text-slate-900 dark:text-white">${article.author.name}</h4>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">${article.author.role} • ${article.date}</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button onclick="toggleArticleBookmark('${article.id}')" class="p-2 rounded-xl border ${isSaved ? 'bg-brand-600 text-white border-brand-600' : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'} transition-all text-xs font-bold flex items-center gap-1.5" title="Save Story">
+                <i class="ph-bookmark-simple ${isSaved ? 'ph-fill' : 'ph-bold'} text-sm"></i>
+                <span class="hidden sm:inline">${isSaved ? 'Saved' : 'Save'}</span>
+              </button>
+
+              <button onclick="shareArticleToWhatsApp('${article.title}')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 transition-colors shadow-sm">
+                <i class="ph-whatsapp-logo ph-bold text-sm"></i> Share Story
+              </button>
+              <button onclick="copyArticleDirectLink('${article.id}')" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold px-3.5 py-2 rounded-xl flex items-center gap-1.5 transition-colors">
+                <i class="ph-link ph-bold text-sm"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- Featured Visual Media -->
+          <div class="rounded-3xl overflow-hidden bg-slate-900 aspect-[16/10] sm:aspect-[21/10] shadow-md relative">
+            <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1200x600/1e3a8a/ffffff?text=Lolly+Gist'" />
+          </div>
+          <p class="text-xs text-slate-400 italic text-center -mt-3">
+            Photo: ${article.imageCaption}
+          </p>
+
+          <!-- Article Text Body -->
+          <div class="article-prose pt-4 border-t border-slate-200 dark:border-slate-800">
+            ${article.content}
+          </div>
+        </div>
+      `;
+
+      // Render FAQs for this Story
+      const faqContainer = document.getElementById('article-faqs-container');
+      if (article.faqs && article.faqs.length > 0) {
+        faqContainer.innerHTML = article.faqs.map((faq, i) => `
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm transition-colors">
+            <button onclick="toggleFaqAccordionItem(${i})" class="w-full p-4 text-left font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white flex justify-between items-center hover:text-brand-600 dark:hover:text-sky-400 transition-colors">
+              <span>${faq.q}</span>
+              <i id="faq-chevron-${i}" class="ph-caret-down ph-bold text-slate-400 transition-transform"></i>
+            </button>
+            <div id="faq-response-${i}" class="hidden px-4 pb-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3 bg-slate-50/50 dark:bg-slate-800/40">
+              ${faq.a}
+            </div>
+          </div>
+        `).join('');
+      } else {
+        faqContainer.innerHTML = `<p class="text-xs text-slate-400 italic">No community FAQs for this release yet.</p>`;
+      }
+
+      renderArticleCommentsThread(article);
+      renderArticleRelatedStories(article.id, article.category);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function navigateBackFromReader() {
+      if (priorNavigationState === 'category' && selectedActivePortal) {
+        openCategoryPortal(selectedActivePortal);
+      } else {
+        showHomePage();
+      }
+    }
+
+    function toggleFaqAccordionItem(index) {
+      const resp = document.getElementById(`faq-response-${index}`);
+      const icon = document.getElementById(`faq-chevron-${index}`);
+      if (resp.classList.contains('hidden')) {
+        resp.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        resp.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    function renderArticleCommentsThread(article) {
+      const container = document.getElementById('article-comments-stream');
+      const comments = article.comments || [];
+      document.getElementById('article-comments-count-pill').innerText = `${comments.length} Verified Reader Comment${comments.length === 1 ? '' : 's'}`;
+
+      if (comments.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic">Be the first to react from your campus!</p>`;
+        return;
+      }
+
+      container.innerHTML = comments.map(c => `
+        <div class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1 text-xs transition-colors">
+          <div class="flex justify-between items-center">
+            <span class="font-display font-bold text-slate-900 dark:text-white">${c.name}</span>
+            <span class="text-[10px] text-slate-400 font-mono">${c.time}</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">${c.text}</p>
+        </div>
+      `).join('');
+    }
+
+    function handleReaderCommentSubmission(e) {
+      e.preventDefault();
+      const author = document.getElementById('comment-author-name').value.trim();
+      const location = document.getElementById('comment-campus-city').value.trim();
+      const body = document.getElementById('comment-message-body').value.trim();
+
+      const current = MASTER_ARTICLES_DATABASE.find(a => a.id === activeReaderArticleId);
+      if (!current) return;
+
+      const newEntry = {
+        name: `${author} ${location ? `(${location})` : ''}`,
+        time: 'Just now',
+        text: body
+      };
+
+      current.comments = current.comments || [];
+      current.comments.unshift(newEntry);
+      renderArticleCommentsThread(current);
+      showInteractiveToast("✨ Your reaction has been posted!");
+
+      document.getElementById('comment-author-name').value = '';
+      document.getElementById('comment-campus-city').value = '';
+      document.getElementById('comment-message-body').value = '';
+    }
+
+    function renderArticleRelatedStories(currentId, category) {
+      const container = document.getElementById('article-related-posts-grid');
+      const related = MASTER_ARTICLES_DATABASE.filter(a => a.id !== currentId).slice(0, 2);
+
+      container.innerHTML = related.map(rel => `
+        <div onclick="openArticleFullReader('${rel.id}')" class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-sky-400 transition-all cursor-pointer group flex gap-3.5 items-center shadow-sm">
+          <img src="${rel.image}" alt="${rel.title}" class="w-20 h-20 rounded-2xl object-cover shrink-0" onerror="this.src='https://placehold.co/200x200/1e3a8a/ffffff?text=LGD'" />
+          <div class="space-y-1">
+            <span class="text-[9px] font-black uppercase text-brand-600 dark:text-sky-400">${rel.category}</span>
+            <h4 class="font-display text-sm font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 line-clamp-2 leading-snug">
+              ${rel.title}
+            </h4>
+            <span class="text-[10px] text-slate-400">${rel.readTime}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderLeadStoryCover() {
+      const lead = MASTER_ARTICLES_DATABASE[0];
+      const container = document.getElementById('lead-story-banner');
+
+      container.innerHTML = `
+        <div 
+          onclick="openArticleFullReader('${lead.id}')"
+          class="relative rounded-3xl overflow-hidden bg-brand-950 text-white cursor-pointer group shadow-2xl border border-slate-200 dark:border-slate-800 aspect-[16/10] sm:aspect-[21/9]"
+        >
+          <img 
+            src="${lead.image}" 
+            alt="${lead.title}" 
+            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" 
+            onerror="this.src='https://placehold.co/1200x600/1e3a8a/ffffff?text=Lolly+Gist'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/60 to-transparent flex flex-col justify-end p-6 sm:p-10">
+            <div class="flex flex-wrap items-center gap-2 mb-2.5">
+              <span class="bg-brand-600 text-white font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                ${lead.category} Lead Story
+              </span>
+              <span class="text-xs text-slate-300 font-mono flex items-center gap-1">
+                <i class="ph-clock ph-bold"></i> ${lead.readTime}
+              </span>
+            </div>
+            <h1 class="font-display text-xl sm:text-3xl lg:text-4xl font-black leading-tight max-w-3xl text-white group-hover:text-sky-300 transition-colors">
+              ${lead.title}
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-200 mt-2 max-w-2xl line-clamp-2 sm:line-clamp-none font-normal">
+              ${lead.excerpt}
+            </p>
+            <div class="flex items-center gap-3 mt-4 pt-2">
+              <img src="${lead.author.avatar}" alt="${lead.author.name}" class="w-9 h-9 rounded-full border border-brand-400 object-cover" onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=LGD'" />
+              <div class="text-xs">
+                <span class="font-bold text-white block">${lead.author.name}</span>
+                <span class="text-[10px] text-slate-300">${lead.author.role} • ${lead.date}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderTrendingStoriesSidebar() {
+      const container = document.getElementById('trending-stories-stream');
+      const sample = [MASTER_ARTICLES_DATABASE[1], MASTER_ARTICLES_DATABASE[2], MASTER_ARTICLES_DATABASE[3], MASTER_ARTICLES_DATABASE[0]];
+
+      container.innerHTML = sample.map((item, idx) => `
+        <div onclick="openArticleFullReader('${item.id}')" class="flex gap-3 items-start group cursor-pointer">
+          <span class="font-display text-2xl font-black text-slate-300 dark:text-slate-600 group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors shrink-0">
+            0${idx + 1}
+          </span>
+          <div class="space-y-1">
+            <span class="text-[9px] font-black uppercase tracking-wider text-brand-600 dark:text-sky-400">${item.category}</span>
+            <h4 class="font-display text-sm font-bold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-sky-400 transition-colors line-clamp-2 leading-snug">
+              ${item.title}
+            </h4>
+            <span class="text-[10px] text-slate-400 block">${item.readTime}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleArticleBookmark(articleId) {
+      const idx = userBookmarkedArticles.indexOf(articleId);
+      if (idx > -1) {
+        userBookmarkedArticles.splice(idx, 1);
+        showInteractiveToast("Removed from saved reading list");
+      } else {
+        userBookmarkedArticles.push(articleId);
+        showInteractiveToast("✨ Saved to your bookmarks!");
+      }
+      localStorage.setItem('lgd_saved_articles', JSON.stringify(userBookmarkedArticles));
+      refreshBookmarkCounterBadge();
+      
+      if (activeCurrentView === 'reader' && activeReaderArticleId === articleId) {
+        openArticleFullReader(articleId);
+      }
+    }
+
+    function refreshBookmarkCounterBadge() {
+      const badge = document.getElementById('bookmark-count-badge');
+      if (userBookmarkedArticles.length > 0) {
+        badge.innerText = userBookmarkedArticles.length;
+        badge.classList.remove('hidden');
+        badge.classList.add('flex');
+      } else {
+        badge.classList.add('hidden');
+        badge.classList.remove('flex');
+      }
+    }
+
+    function toggleBookmarkDrawer() {
+      const modal = document.getElementById('bookmark-drawer-modal');
+      const container = document.getElementById('bookmark-drawer-content');
+
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        if (userBookmarkedArticles.length === 0) {
+          container.innerHTML = `
+            <div class="text-center py-10 space-y-2">
+              <i class="ph-bookmark-simple ph-bold text-4xl text-slate-300 dark:text-slate-600"></i>
+              <p class="text-xs text-slate-500 dark:text-slate-400">You haven't saved any stories yet.</p>
+            </div>
+          `;
+        } else {
+          const savedArticles = MASTER_ARTICLES_DATABASE.filter(a => userBookmarkedArticles.includes(a.id));
+          container.innerHTML = savedArticles.map(a => `
+            <div onclick="toggleBookmarkDrawer(); openArticleFullReader('${a.id}')" class="p-3 bg-slate-50 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 rounded-2xl border border-slate-200 dark:border-slate-700 cursor-pointer flex gap-3 items-center transition-all">
+              <img src="${a.image}" alt="${a.title}" class="w-14 h-14 rounded-xl object-cover shrink-0" onerror="this.src='https://placehold.co/100x100/1e3a8a/ffffff?text=LGD'" />
+              <div class="space-y-0.5">
+                <span class="text-[9px] font-black uppercase text-brand-600 dark:text-sky-400">${a.category}</span>
+                <h5 class="font-display text-xs font-bold text-slate-900 dark:text-white line-clamp-1">${a.title}</h5>
+                <span class="text-[10px] text-slate-400">${a.readTime}</span>
+              </div>
+            </div>
+          `).join('');
+        }
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function submitPollVote(index) {
+      campusPollTallies[index] += 1;
+      showInteractiveToast("Your vote has been counted!");
+      document.getElementById(`poll-percentage-${index}`).innerText = `${campusPollTallies[index]}%`;
+    }
+
+    function handleNewsletterSubscription(e) {
+      e.preventDefault();
+      const val = document.getElementById('newsletter-email-field').value;
+      if (val) {
+        showInteractiveToast("✨ Subscribed! You are locked in for the Friday VIP digest.");
+        document.getElementById('newsletter-email-field').value = '';
+      }
+    }
+
+    function scrollToNewsletterSection() {
+      const el = document.getElementById('newsletter-hub-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function shareEntirePublication() {
+      const data = {
+        title: 'Lolly Gist & Drip Magazine',
+        text: 'Catch verified Nigerian youth stories, campus life, food spots and street drip!',
+        url: window.location.href
+      };
+      if (navigator.share) {
+        navigator.share(data).catch(() => copyPublicationDirectLink());
+      } else {
+        copyPublicationDirectLink();
+      }
+    }
+
+    function shareArticleToWhatsApp(title) {
+      const url = `https://wa.me/?text=${encodeURIComponent(`Check out this story on Lolly Gist & Drip: "${title}" 👉 ${window.location.href}`)}`;
+      window.open(url, '_blank');
+    }
+
+    function openWhatsAppDeskChat() {
+      const url = `https://wa.me/2348000000000?text=${encodeURIComponent('Hello Editorial Desk! I have a verified story, news tip or food spot to share with LGD.')}`;
+      window.open(url, '_blank');
+    }
+
+    function copyPublicationDirectLink() {
+      copyStringToClipboard(window.location.href, "Publication Link");
+    }
+
+    function copyArticleDirectLink(id) {
+      copyStringToClipboard(`${window.location.href.split('#')[0]}#${id}`, "Article Link");
+    }
+
+    function copyStringToClipboard(text, label) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showInteractiveToast(`✨ ${label} copied to clipboard!`);
+    }
+  </script>
+</body>
+</html>
